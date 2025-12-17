@@ -4,8 +4,8 @@
   "description": "A Symfony-focused toolkit for Claude Code providing TDD (Pest/PHPUnit), Doctrine ORM, API Platform, Messenger, Voters, quality checks (PHP-CS-Fixer/PHPStan), and pragmatic architecture patterns - Docker Compose and Symfony Docker (FrankenPHP) compatible",
   "author": "Kevin <kevin@example.com>",
   "license": "MIT",
-  "homepage": "https://github.com/your-org/superpowers-symfony",
-  "repository": "https://github.com/your-org/superpowers-symfony",
+  "homepage": "https://github.com/MakFly/superpowers-symfony",
+  "repository": "https://github.com/MakFly/superpowers-symfony",
   "keywords": [
     "symfony",
     "php",

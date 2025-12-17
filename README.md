@@ -20,7 +20,7 @@ A Claude Code plugin providing Symfony-specific guidance, skills, and workflows.
 claude plugins install superpowers-symfony
 
 # Or manually
-git clone https://github.com/your-org/superpowers-symfony ~/.claude/plugins/superpowers-symfony
+git clone https://github.com/MakFly/superpowers-symfony ~/.claude/plugins/superpowers-symfony
 ```
 
 ## Usage
@@ -196,5 +196,5 @@ Inspired by [superpowers-laravel](https://github.com/jpcaparas/superpowers-larav
 
 ## Support
 
-- Issues: [GitHub Issues](https://github.com/your-org/superpowers-symfony/issues)
-- Discussions: [GitHub Discussions](https://github.com/your-org/superpowers-symfony/discussions)
+- Issues: [GitHub Issues](https://github.com/MakFly/superpowers-symfony/issues)
+- Discussions: [GitHub Discussions](https://github.com/MakFly/superpowers-symfony/discussions)
