@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "symfony-plugins",
+  "description": "Symfony plugins for Claude Code",
+  "owner": {
+    "name": "PierreThiollent"
+  },
+  "plugins": [
+    {
+      "name": "superpowers-symfony",
+      "description": "A Symfony-focused toolkit for Claude Code providing TDD, Doctrine, API Platform, Messenger, and pragmatic architecture patterns",
+      "version": "0.1.0",
+      "author": {
+        "name": "MakFly"
+      },
+      "source": "./",
+      "categories": ["frameworks", "testing", "productivity"]
+    }
+  ]
+}
