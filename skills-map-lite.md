@@ -17,14 +17,6 @@ Lightweight index for fast discovery.
 - `symfony:doctrine-fixtures-foundry` — Create test data with Foundry factories; define states, sequences, and relationships for realistic fixtures
 - `symfony:doctrine-transactions` — Handle database transactions with Doctrine UnitOfWork; implement optimistic locking, flush strategies, and transaction boundaries
 
-## API Platform
-- `symfony:api-platform-filters` — Implement API Platform filters for search, date ranges, boolean, and custom filtering with proper indexing
-- `symfony:api-platform-versioning` — Implement API versioning strategies in API Platform including URI, header, and query parameter approaches
-- `symfony:api-platform-security` — Secure API Platform resources with security expressions, voters, and operation-level access control
-- `symfony:api-platform-state-providers` — Master API Platform State Providers and Processors to decouple data retrieval and persistence from entities, enabling clean architecture and custom data sources
-- `symfony:api-platform-tests` — Test API Platform resources with ApiTestCase, test collections, items, filters, and authentication
-- `symfony:api-platform-resources` — Configure API Platform resources with operations, pagination, and output DTOs for clean, versioned REST/GraphQL APIs
-
 ## Messaging & Async
 - `symfony:symfony-messenger` — Async message handling with Symfony Messenger; configure transports (RabbitMQ, Redis, Doctrine); implement handlers, middleware, and retry strategies
 - `symfony:messenger-retry-failures` — Handle message failures with retry strategies, dead letter queues, and failure recovery in Symfony Messenger

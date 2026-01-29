@@ -4,14 +4,6 @@ Short index for skill discovery without loading full files.
 
 | Skill | Description | Use cases | Tags | Path |
 | --- | --- | --- | --- | --- |
-| `symfony:api-platform-dto-resources` | Use when symfony api platform dto resources | Use when symfony api platform dto resources | api-platform | `skills/api-platform-dto-resources/SKILL.md` |
-| `symfony:api-platform-filters` | Use when symfony api platform filters | Use when symfony api platform filters | api-platform | `skills/api-platform-filters/SKILL.md` |
-| `symfony:api-platform-resources` | Use when symfony api platform resources | Use when symfony api platform resources | api-platform | `skills/api-platform-resources/SKILL.md` |
-| `symfony:api-platform-security` | Use when symfony api platform security | Use when symfony api platform security | api-platform, security | `skills/api-platform-security/SKILL.md` |
-| `symfony:api-platform-serialization` | Use when symfony api platform serialization | Use when symfony api platform serialization | api-platform | `skills/api-platform-serialization/SKILL.md` |
-| `symfony:api-platform-state-providers` | Use when symfony api platform state providers | Use when symfony api platform state providers | api-platform | `skills/api-platform-state-providers/SKILL.md` |
-| `symfony:api-platform-tests` | Use when symfony api platform tests | Use when symfony api platform tests | api-platform | `skills/api-platform-tests/SKILL.md` |
-| `symfony:api-platform-versioning` | Use when symfony api platform versioning | Use when symfony api platform versioning | api-platform | `skills/api-platform-versioning/SKILL.md` |
 | `symfony:bootstrap-check` | Use when symfony bootstrap check | Use when symfony bootstrap check |  | `skills/bootstrap-check/SKILL.md` |
 | `symfony:brainstorming` | Use when symfony brainstorming | Use when symfony brainstorming |  | `skills/brainstorming/SKILL.md` |
 | `symfony:config-env-parameters` | Use when symfony config env parameters | Use when symfony config env parameters | config | `skills/config-env-parameters/SKILL.md` |

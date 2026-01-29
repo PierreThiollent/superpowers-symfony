@@ -1,7 +1,7 @@
 {
   "name": "superpowers-symfony",
   "version": "0.1.0",
-  "description": "A Symfony-focused toolkit for Claude Code providing TDD, Doctrine, API Platform, Messenger, and pragmatic architecture patterns",
+  "description": "A Symfony-focused toolkit for Claude Code providing TDD, Doctrine, Messenger, and pragmatic architecture patterns",
   "author": {
     "name": "MakFly"
   },
@@ -14,7 +14,6 @@
     "docker",
     "tdd",
     "doctrine",
-    "api-platform",
     "messenger"
   ]
 }

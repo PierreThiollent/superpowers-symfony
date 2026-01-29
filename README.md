@@ -1,12 +1,11 @@
 # Superpowers Symfony
 
-A Claude Code plugin providing Symfony-specific guidance, skills, and workflows. This plugin enhances your development experience with TDD support, Doctrine guidance, API Platform patterns, and best practices for Symfony 6.4 LTS, 7.x, and 8.0.
+A Claude Code plugin providing Symfony-specific guidance, skills, and workflows. This plugin enhances your development experience with TDD support, Doctrine guidance, and best practices for Symfony 6.4 LTS, 7.x, and 8.0.
 
 ## Features
 
 - **TDD Workflows** - RED-GREEN-REFACTOR with Pest PHP or PHPUnit
 - **Doctrine Mastery** - Relations, migrations, transactions, Foundry fixtures
-- **API Platform** - Resources, filters, serialization, versioning
 - **Symfony Messenger** - Async processing, handlers, retry strategies
 - **Security** - Voters for granular authorization
 - **Architecture** - Hexagonal/Ports & Adapters, DI patterns
@@ -80,7 +79,6 @@ Use the skill symfony:<skill-name>
 
 # Examples
 Use the skill symfony:tdd-with-pest
-Use the skill symfony:api-platform-dto-resources
 Use the skill symfony:doctrine-relations
 ```
 
@@ -89,15 +87,12 @@ Use the skill symfony:doctrine-relations
 |---------------|--------------|
 | `Use the skill symfony:tdd-with-pest` | Claude reads and applies TDD with Pest knowledge |
 | `Apply symfony:doctrine-relations` | Claude reads and applies Doctrine relations patterns |
-| `Load symfony:api-platform-dto-resources` | Claude reads and applies DTO resources patterns |
 
 ### Method 1: Ask Claude Directly (Recommended)
 
 Simply ask Claude to use a specific skill in your conversation:
 
 ```
-Use the skill symfony:api-platform-dto-resources to help me create a Product API
-
 Use the skill symfony:tdd-with-pest and help me write tests for my UserService
 
 Apply the symfony:doctrine-relations skill to design my e-commerce entities
@@ -133,7 +128,6 @@ Avoid `@` file references in `CLAUDE.md` because they force-load large files and
 
 ```
 Use the skill symfony:tdd-with-pest
-Use the skill symfony:api-platform-dto-resources
 Use the skill symfony:doctrine-relations
 ```
 
@@ -169,21 +163,7 @@ Claude: [Reads symfony:tdd-with-pest skill]
         3. REFACTOR - Clean up...
 ```
 
-### Example 2: API Platform DTOs
-
-```
-User: Use symfony:api-platform-dto-resources to create a Product API for my e-commerce
-
-Claude: [Reads the DTO resources skill]
-        I'll create a clean API using DTOs separated from your Doctrine entities:
-
-        1. ProductOutput DTO (what the API returns)
-        2. ProductInput DTO (what the API receives)
-        3. ProductProvider (Entity -> DTO transformation)
-        4. ProductProcessor (DTO -> Entity persistence)
-```
-
-### Example 3: Doctrine Relations
+### Example 2: Doctrine Relations
 
 ```
 User: Apply symfony:doctrine-relations - I need User, Order, and Product entities
@@ -196,7 +176,7 @@ Claude: [Reads doctrine-relations skill]
         - Product (N) <-> (N) Category (ManyToMany)
 ```
 
-### Example 4: Quality Checks
+### Example 3: Quality Checks
 
 ```
 User: Use the quality-checks skill to analyze my codebase
@@ -211,18 +191,17 @@ Claude: [Reads quality-checks skill]
         [Executes checks and reports issues]
 ```
 
-### Example 5: Combining Multiple Skills
+### Example 4: Combining Multiple Skills
 
 ```
-User: I want to build a blog API with posts and comments.
-      Use these skills: doctrine-relations, api-platform-dto-resources, tdd-with-pest
+User: I want to build a blog with posts and comments.
+      Use these skills: doctrine-relations, tdd-with-pest
 
-Claude: [Reads all three skills]
+Claude: [Reads both skills]
         Let me combine these patterns:
 
         1. First, I'll design the entity relationships (doctrine-relations)
-        2. Then create the API DTOs (api-platform-dto-resources)
-        3. Finally, write tests using TDD (tdd-with-pest)
+        2. Then write tests using TDD (tdd-with-pest)
 ```
 
 ## Available Skills
@@ -240,7 +219,6 @@ Claude: [Reads all three skills]
 | `tdd-with-pest` | TDD workflow with Pest PHP |
 | `tdd-with-phpunit` | TDD workflow with PHPUnit |
 | `functional-tests` | WebTestCase for HTTP testing |
-| `api-platform-tests` | API Platform test utilities |
 | `test-doubles-mocking` | Mocks, stubs, and fakes |
 | `e2e-panther-playwright` | End-to-end browser testing |
 
@@ -253,17 +231,6 @@ Claude: [Reads all three skills]
 | `doctrine-transactions` | Transaction handling |
 | `doctrine-batch-processing` | Bulk operations |
 | `doctrine-fetch-modes` | Performance optimization |
-
-### API Platform
-| Skill | Description |
-|-------|-------------|
-| `api-platform-resources` | Resource configuration |
-| `api-platform-filters` | Search and filtering |
-| `api-platform-serialization` | Serialization groups |
-| `api-platform-state-providers` | Custom State Providers & Processors |
-| `api-platform-dto-resources` | DTO-based API Resources |
-| `api-platform-security` | API security patterns |
-| `api-platform-versioning` | API versioning strategies |
 
 ### Messenger & Async
 | Skill | Description |
@@ -310,7 +277,6 @@ Available commands (copy to `.claude/commands/` to use):
 | `symfony-migrations.md` | Doctrine migrations helper |
 | `symfony-fixtures.md` | Generate test fixtures |
 | `symfony-doctrine-relations.md` | Design entity relations |
-| `symfony-api-resources.md` | Create API resources |
 | `symfony-voters.md` | Implement authorization |
 | `symfony-messenger.md` | Setup async messaging |
 | `symfony-cache.md` | Configure caching |
@@ -322,8 +288,6 @@ Available commands (copy to `.claude/commands/` to use):
 | Symfony | 6.4 LTS | Supported |
 | Symfony | 7.x | Supported |
 | Symfony | 8.0 | Supported |
-| API Platform | 3.x | Supported |
-| API Platform | 4.x | Supported |
 
 ## Docker Support
 
@@ -356,12 +320,10 @@ php bin/console
 superpowers-symfony/
 ├── .claude-plugin/
 │   └── plugin.json          # Plugin configuration
-├── skills/                   # Skill definitions (49 skills)
+├── skills/                   # Skill definitions (35 skills)
 │   ├── tdd-with-pest/
 │   │   └── SKILL.md
 │   ├── doctrine-relations/
-│   │   └── SKILL.md
-│   ├── api-platform-dto-resources/
 │   │   └── SKILL.md
 │   └── ...
 ├── commands/                 # Slash commands
@@ -370,9 +332,6 @@ superpowers-symfony/
 │   └── ...
 ├── docs/
 │   └── symfony/             # Additional documentation
-│       ├── api-platform.md
-│       ├── state-providers-processors.md
-│       └── dto-resources.md
 ├── hooks/
 │   ├── hooks.json           # Hook configuration
 │   └── session-start.sh     # Auto-detection script

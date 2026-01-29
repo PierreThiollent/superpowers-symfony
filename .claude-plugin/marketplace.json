@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "superpowers-symfony",
-      "description": "A Symfony-focused toolkit for Claude Code providing TDD, Doctrine, API Platform, Messenger, and pragmatic architecture patterns",
+      "description": "A Symfony-focused toolkit for Claude Code providing TDD, Doctrine, Messenger, and pragmatic architecture patterns",
       "version": "0.1.0",
       "author": {
         "name": "MakFly"
