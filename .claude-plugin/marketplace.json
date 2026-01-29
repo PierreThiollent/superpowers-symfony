@@ -13,8 +13,7 @@
       "author": {
         "name": "MakFly"
       },
-      "source": "./",
-      "categories": ["frameworks", "testing", "productivity"]
+      "source": "./"
     }
   ]
 }
