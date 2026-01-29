@@ -32,7 +32,6 @@ Short index for skill discovery without loading full files.
 | `symfony:symfony-messenger` | Use when symfony symfony messenger | Use when symfony symfony messenger | messenger | `skills/symfony-messenger/SKILL.md` |
 | `symfony:symfony-scheduler` | Use when symfony symfony scheduler | Use when symfony symfony scheduler |  | `skills/symfony-scheduler/SKILL.md` |
 | `symfony:symfony-voters` | Use when symfony symfony voters | Use when symfony symfony voters |  | `skills/symfony-voters/SKILL.md` |
-| `symfony:tdd-with-pest` | Use when symfony tdd with pest | Use when symfony tdd with pest |  | `skills/tdd-with-pest/SKILL.md` |
 | `symfony:tdd-with-phpunit` | Use when symfony tdd with phpunit | Use when symfony tdd with phpunit |  | `skills/tdd-with-phpunit/SKILL.md` |
 | `symfony:test-doubles-mocking` | Use when symfony test doubles mocking | Use when symfony test doubles mocking |  | `skills/test-doubles-mocking/SKILL.md` |
 | `symfony:twig-components` | Use when symfony twig components | Use when symfony twig components |  | `skills/twig-components/SKILL.md` |

@@ -173,37 +173,32 @@ dd($variable);      // Dump and die
 ```bash
 # All tests
 ./vendor/bin/phpunit
-# Or with Pest
-./vendor/bin/pest
 
 # Specific test file
-./vendor/bin/pest tests/Functional/Api/ProductTest.php
+./vendor/bin/phpunit tests/Functional/Api/ProductTest.php
 
 # Specific test method
-./vendor/bin/pest --filter "creates product"
+./vendor/bin/phpunit --filter "creates product"
 
 # With coverage
-./vendor/bin/pest --coverage --min=80
-
-# Parallel execution
-./vendor/bin/pest --parallel
+./vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
 ```
 
 ### TDD Cycle
 
 ```bash
 # 1. Write failing test
-./vendor/bin/pest tests/Unit/Service/ProductServiceTest.php
+./vendor/bin/phpunit tests/Unit/Service/ProductServiceTest.php
 
 # 2. Implement minimum code to pass
 
 # 3. Run test again - should pass
-./vendor/bin/pest tests/Unit/Service/ProductServiceTest.php
+./vendor/bin/phpunit tests/Unit/Service/ProductServiceTest.php
 
 # 4. Refactor
 
 # 5. Run all tests
-./vendor/bin/pest
+./vendor/bin/phpunit
 ```
 
 ## Code Quality
@@ -218,7 +213,7 @@ dd($variable);      // Dump and die
 ./vendor/bin/phpstan analyse
 
 # Run tests
-./vendor/bin/pest
+./vendor/bin/phpunit
 
 # All checks
 composer run-script check
@@ -304,7 +299,7 @@ git push origin feature/product-filtering
 | Clear cache | `bin/console cache:clear` |
 | Run migrations | `bin/console doctrine:migrations:migrate` |
 | Load fixtures | `bin/console doctrine:fixtures:load` |
-| Run tests | `./vendor/bin/pest` |
+| Run tests | `./vendor/bin/phpunit` |
 | Fix code style | `./vendor/bin/php-cs-fixer fix` |
 | Static analysis | `./vendor/bin/phpstan analyse` |
 | Debug routes | `bin/console debug:router` |

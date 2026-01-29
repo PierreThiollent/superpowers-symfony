@@ -4,7 +4,7 @@ A Claude Code plugin providing Symfony-specific guidance, skills, and workflows.
 
 ## Features
 
-- **TDD Workflows** - RED-GREEN-REFACTOR with Pest PHP or PHPUnit
+- **TDD Workflows** - RED-GREEN-REFACTOR with PHPUnit
 - **Doctrine Mastery** - Relations, migrations, transactions, Foundry fixtures
 - **Symfony Messenger** - Async processing, handlers, retry strategies
 - **Security** - Voters for granular authorization
@@ -78,14 +78,13 @@ To invoke a skill, simply ask Claude using one of these patterns:
 Use the skill symfony:<skill-name>
 
 # Examples
-Use the skill symfony:tdd-with-pest
+Use the skill symfony:tdd-with-phpunit
 Use the skill symfony:doctrine-relations
 ```
 
 **Quick Reference:**
 | What you type | What happens |
 |---------------|--------------|
-| `Use the skill symfony:tdd-with-pest` | Claude reads and applies TDD with Pest knowledge |
 | `Apply symfony:doctrine-relations` | Claude reads and applies Doctrine relations patterns |
 
 ### Method 1: Ask Claude Directly (Recommended)
@@ -93,7 +92,7 @@ Use the skill symfony:doctrine-relations
 Simply ask Claude to use a specific skill in your conversation:
 
 ```
-Use the skill symfony:tdd-with-pest and help me write tests for my UserService
+Use the skill symfony:tdd-with-phpunit and help me write tests for my UserService
 
 Apply the symfony:doctrine-relations skill to design my e-commerce entities
 ```
@@ -112,12 +111,12 @@ mkdir -p .claude/commands
 cp ~/.claude/plugins/superpowers-symfony/commands/*.md .claude/commands/
 
 # Or copy specific commands
-cp ~/.claude/plugins/superpowers-symfony/commands/symfony-tdd-pest.md .claude/commands/
+cp ~/.claude/plugins/superpowers-symfony/commands/symfony-tdd-phpunit.md .claude/commands/
 ```
 
 Then use them with:
 ```
-/symfony-tdd-pest
+/symfony-tdd-phpunit
 /symfony-check
 /write-plan
 ```
@@ -127,7 +126,7 @@ Then use them with:
 Avoid `@` file references in `CLAUDE.md` because they force-load large files and increase context usage. Prefer explicit skill invocation instead:
 
 ```
-Use the skill symfony:tdd-with-pest
+Use the skill symfony:tdd-with-phpunit
 Use the skill symfony:doctrine-relations
 ```
 
@@ -144,26 +143,7 @@ and run the checks on my project
 
 ## Usage Examples
 
-### Example 1: TDD with Pest
-
-```
-User: I need to create a PriceCalculator service with discounts. Use TDD with Pest.
-
-Claude: [Reads symfony:tdd-with-pest skill]
-        Let me guide you through the RED-GREEN-REFACTOR cycle...
-
-        1. RED - Write failing test first:
-        // tests/Unit/Service/PriceCalculatorTest.php
-        test('calculates price with percentage discount', function () {
-            $calculator = new PriceCalculator();
-            expect($calculator->calculate(10000, 10))->toBe(9000);
-        });
-
-        2. GREEN - Minimal implementation...
-        3. REFACTOR - Clean up...
-```
-
-### Example 2: Doctrine Relations
+### Example 1: Doctrine Relations
 
 ```
 User: Apply symfony:doctrine-relations - I need User, Order, and Product entities
@@ -195,13 +175,13 @@ Claude: [Reads quality-checks skill]
 
 ```
 User: I want to build a blog with posts and comments.
-      Use these skills: doctrine-relations, tdd-with-pest
+      Use these skills: doctrine-relations, tdd-with-phpunit
 
 Claude: [Reads both skills]
         Let me combine these patterns:
 
         1. First, I'll design the entity relationships (doctrine-relations)
-        2. Then write tests using TDD (tdd-with-pest)
+        2. Then write tests using TDD (tdd-with-phpunit)
 ```
 
 ## Available Skills
@@ -216,7 +196,6 @@ Claude: [Reads both skills]
 ### Testing
 | Skill | Description |
 |-------|-------------|
-| `tdd-with-pest` | TDD workflow with Pest PHP |
 | `tdd-with-phpunit` | TDD workflow with PHPUnit |
 | `functional-tests` | WebTestCase for HTTP testing |
 | `test-doubles-mocking` | Mocks, stubs, and fakes |
@@ -272,7 +251,6 @@ Available commands (copy to `.claude/commands/` to use):
 | `write-plan.md` | Create an implementation plan |
 | `execute-plan.md` | Execute plan with TDD |
 | `symfony-check.md` | Run quality checks |
-| `symfony-tdd-pest.md` | TDD workflow with Pest |
 | `symfony-tdd-phpunit.md` | TDD workflow with PHPUnit |
 | `symfony-migrations.md` | Doctrine migrations helper |
 | `symfony-fixtures.md` | Generate test fixtures |
@@ -320,9 +298,7 @@ php bin/console
 superpowers-symfony/
 ├── .claude-plugin/
 │   └── plugin.json          # Plugin configuration
-├── skills/                   # Skill definitions (35 skills)
-│   ├── tdd-with-pest/
-│   │   └── SKILL.md
+├── skills/                   # Skill definitions (34 skills)
 │   ├── doctrine-relations/
 │   │   └── SKILL.md
 │   └── ...

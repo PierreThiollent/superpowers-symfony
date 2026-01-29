@@ -13,8 +13,7 @@ First public release of **superpowers-symfony**, a comprehensive Claude Code plu
 
 #### Skills Categories
 
-**Testing (5 skills)**
-- TDD with Pest PHP
+**Testing (4 skills)**
 - TDD with PHPUnit
 - Functional tests with WebTestCase
 - Test doubles and mocking

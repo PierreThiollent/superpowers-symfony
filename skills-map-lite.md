@@ -34,7 +34,6 @@ Lightweight index for fast discovery.
 - `symfony:interfaces-and-autowiring` — Master Symfony's Dependency Injection with autowiring, interface binding, service decoration, and tagged services for flexible architecture
 
 ## Testing
-- `symfony:tdd-with-pest` — Apply RED-GREEN-REFACTOR with Pest PHP for Symfony; use Foundry factories, functional tests with WebTestCase, verify failures before implementation
 - `symfony:e2e-panther-playwright` — Write end-to-end tests with Symfony Panther for browser automation or Playwright for complex scenarios
 - `symfony:functional-tests` — Write functional tests for Symfony controllers and HTTP endpoints using WebTestCase, BrowserKit, and test clients
 - `symfony:tdd-with-phpunit` — Apply RED-GREEN-REFACTOR with PHPUnit for Symfony; use KernelTestCase, WebTestCase, and Foundry for comprehensive testing

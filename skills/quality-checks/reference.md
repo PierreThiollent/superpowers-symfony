@@ -199,7 +199,7 @@ composer require --dev vimeo/psalm
         "cs:fix": "./vendor/bin/php-cs-fixer fix",
         "stan": "./vendor/bin/phpstan analyse",
         "psalm": "./vendor/bin/psalm",
-        "test": "./vendor/bin/pest",
+        "test": "./vendor/bin/phpunit",
         "check": [
             "@cs",
             "@stan",
@@ -250,7 +250,7 @@ jobs:
         run: ./vendor/bin/phpstan analyse
 
       - name: Tests
-        run: ./vendor/bin/pest --coverage --min=80
+        run: ./vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
 ```
 
 ## Pre-commit Hook

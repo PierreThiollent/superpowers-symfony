@@ -60,32 +60,7 @@ get_symfony_version() {
 }
 
 # ============================================
-# 3. API PLATFORM DETECTION
-# ============================================
-
-detect_api_platform() {
-  local app_dir="$1"
-  local has_api_platform="false"
-  local api_version=""
-
-  if [[ -f "$app_dir/composer.lock" ]]; then
-    if grep -q '"api-platform/core"' "$app_dir/composer.lock" 2>/dev/null; then
-      has_api_platform="true"
-      api_version=$(grep -A5 '"name": "api-platform/core"' "$app_dir/composer.lock" 2>/dev/null |
-        grep '"version"' | head -1 |
-        sed -E 's/.*"version": "v?([0-9]+\.[0-9]+).*/\1/')
-    fi
-  elif [[ -f "$app_dir/composer.json" ]]; then
-    if grep -q '"api-platform/core"' "$app_dir/composer.json" 2>/dev/null; then
-      has_api_platform="true"
-    fi
-  fi
-
-  echo "${has_api_platform}:${api_version:-none}"
-}
-
-# ============================================
-# 4. DOCKER TYPE DETECTION
+# 3. DOCKER TYPE DETECTION
 # ============================================
 
 detect_docker_type() {
@@ -155,28 +130,7 @@ check_docker_running() {
 }
 
 # ============================================
-# 6. TEST FRAMEWORK DETECTION
-# ============================================
-
-detect_test_framework() {
-  local app_dir="$1"
-  local framework="phpunit" # Default Symfony
-
-  if [[ -f "$app_dir/composer.lock" ]]; then
-    if grep -q '"pestphp/pest"' "$app_dir/composer.lock" 2>/dev/null; then
-      framework="pest"
-    fi
-  elif [[ -f "$app_dir/composer.json" ]]; then
-    if grep -q '"pestphp/pest"' "$app_dir/composer.json" 2>/dev/null; then
-      framework="pest"
-    fi
-  fi
-
-  echo "$framework"
-}
-
-# ============================================
-# 7. DETERMINE RUNNER COMMANDS
+# 4. DETERMINE RUNNER COMMANDS
 # ============================================
 
 get_runner_commands() {
@@ -245,22 +199,14 @@ main() {
 
   # Collect information
   local symfony_version
-  local api_platform_info
   local docker_type
   local docker_running
-  local test_framework
   local runner_info
 
   symfony_version=$(get_symfony_version "$active_app")
-  api_platform_info=$(detect_api_platform "$active_app")
   docker_type=$(detect_docker_type "$active_app")
   docker_running=$(check_docker_running "$active_app" "$docker_type")
-  test_framework=$(detect_test_framework "$active_app")
   runner_info=$(get_runner_commands "$active_app" "$docker_type" "$docker_running")
-
-  # Parse API Platform info
-  local has_api_platform="${api_platform_info%%:*}"
-  local api_version="${api_platform_info##*:}"
 
   # Parse runner commands
   IFS='|' read -r runner_cmd console_cmd composer_cmd test_cmd <<<"$runner_info"
@@ -285,16 +231,11 @@ main() {
     "version": "$symfony_version",
     "is_lts": $(if [[ "$symfony_version" == "6.4" ]]; then echo "true"; else echo "false"; fi)
   },
-  "api_platform": {
-    "installed": $has_api_platform,
-    "version": "$api_version"
-  },
   "docker": {
     "type": "$docker_type",
     "running": $docker_running,
     "is_symfony_docker": $(if [[ "$docker_type" == "symfony-docker" ]]; then echo "true"; else echo "false"; fi)
   },
-  "test_framework": "$test_framework",
   "commands": {
     "runner": "$runner_cmd",
     "console": "$console_cmd",

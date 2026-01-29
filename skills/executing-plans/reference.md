@@ -24,7 +24,7 @@ composer install
 bin/console cache:clear
 
 # Ensure tests pass
-./vendor/bin/pest  # or phpunit
+./vendor/bin/phpunit
 ```
 
 ### Step 2: For Each Plan Step
@@ -101,7 +101,7 @@ Run after each phase:
 ./vendor/bin/phpstan analyse
 
 # Tests
-./vendor/bin/pest
+./vendor/bin/phpunit
 
 # All checks
 composer run-script check
@@ -145,7 +145,7 @@ bin/console doctrine:schema:validate
 # 4. Configure in services.yaml (if needed)
 
 # 5. Run tests
-./vendor/bin/pest tests/Unit/Service/OrderServiceTest.php
+./vendor/bin/phpunit tests/Unit/Service/OrderServiceTest.php
 ```
 
 ### API Endpoint Implementation
@@ -159,7 +159,7 @@ bin/console doctrine:schema:validate
 # 3. Create/configure voter
 
 # 4. Run tests
-./vendor/bin/pest tests/Functional/Api/OrderTest.php
+./vendor/bin/phpunit tests/Functional/Api/OrderTest.php
 
 # 5. Verify in browser/Postman
 curl http://localhost/api/orders
@@ -180,7 +180,7 @@ curl http://localhost/api/orders
 # 4. Configure routing in messenger.yaml
 
 # 5. Run tests with in-memory transport
-./vendor/bin/pest tests/Unit/MessageHandler/
+./vendor/bin/phpunit tests/Unit/MessageHandler/
 ```
 
 ## Handling Blockers
@@ -189,7 +189,7 @@ curl http://localhost/api/orders
 
 ```bash
 # Run single test with verbose output
-./vendor/bin/pest tests/path/to/Test.php --filter testName -vvv
+./vendor/bin/phpunit tests/path/to/Test.php --filter testName -vvv
 
 # Check logs
 tail -f var/log/dev.log
@@ -242,10 +242,10 @@ Before marking plan complete:
 
 ```bash
 # Full test suite
-./vendor/bin/pest
+./vendor/bin/phpunit
 
 # Code coverage
-./vendor/bin/pest --coverage --min=80
+./vendor/bin/phpunit --coverage --min=80
 
 # Static analysis
 ./vendor/bin/phpstan analyse
